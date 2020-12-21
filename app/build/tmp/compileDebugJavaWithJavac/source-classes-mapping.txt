@@ -1,0 +1,15 @@
+com/example/penaltimecatronico/SecondFragment.java
+ com.example.penaltimecatronico.SecondFragment
+ com.example.penaltimecatronico.SecondFragment$1
+com/example/penaltimecatronico/BuildConfig.java
+ com.example.penaltimecatronico.BuildConfig
+com/example/penaltimecatronico/StartSesionClient.java
+ com.example.penaltimecatronico.StartSesionClient
+com/example/penaltimecatronico/MainActivity.java
+ com.example.penaltimecatronico.MainActivity
+ com.example.penaltimecatronico.MainActivity$1
+com/example/penaltimecatronico/StartSesionRegister.java
+ com.example.penaltimecatronico.StartSesionRegister
+com/example/penaltimecatronico/FirstFragment.java
+ com.example.penaltimecatronico.FirstFragment
+ com.example.penaltimecatronico.FirstFragment$1

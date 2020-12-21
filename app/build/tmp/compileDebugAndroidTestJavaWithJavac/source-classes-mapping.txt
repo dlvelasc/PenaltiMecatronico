@@ -1,0 +1,4 @@
+com/example/penaltimecatronico/test/BuildConfig.java
+ com.example.penaltimecatronico.test.BuildConfig
+com/example/penaltimecatronico/ExampleInstrumentedTest.java
+ com.example.penaltimecatronico.ExampleInstrumentedTest
