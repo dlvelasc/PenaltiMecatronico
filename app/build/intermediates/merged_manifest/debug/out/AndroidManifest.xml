@@ -19,6 +19,13 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.penaltimecatronico.intro" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name="com.example.penaltimecatronico.Estadistics" />
         <activity android:name="com.example.penaltimecatronico.Menu" />
         <activity android:name="com.example.penaltimecatronico.Register" />
@@ -28,11 +35,6 @@
             android:name="com.example.penaltimecatronico.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

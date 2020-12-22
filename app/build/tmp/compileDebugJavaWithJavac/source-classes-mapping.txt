@@ -3,6 +3,9 @@ com/example/penaltimecatronico/SecondFragment.java
  com.example.penaltimecatronico.SecondFragment$1
 com/example/penaltimecatronico/BuildConfig.java
  com.example.penaltimecatronico.BuildConfig
+com/example/penaltimecatronico/intro.java
+ com.example.penaltimecatronico.intro
+ com.example.penaltimecatronico.intro$1
 com/example/penaltimecatronico/gameOn.java
  com.example.penaltimecatronico.gameOn
  com.example.penaltimecatronico.gameOn$1
@@ -16,13 +19,13 @@ com/example/penaltimecatronico/Register.java
  com.example.penaltimecatronico.Register
  com.example.penaltimecatronico.Register$1
  com.example.penaltimecatronico.Register$2
-com/example/penaltimecatronico/Estadistics.java
- com.example.penaltimecatronico.Estadistics
- com.example.penaltimecatronico.Estadistics$1
 com/example/penaltimecatronico/LogInClient.java
  com.example.penaltimecatronico.LogInClient
  com.example.penaltimecatronico.LogInClient$1
  com.example.penaltimecatronico.LogInClient$2
+com/example/penaltimecatronico/Estadistics.java
+ com.example.penaltimecatronico.Estadistics
+ com.example.penaltimecatronico.Estadistics$1
 com/example/penaltimecatronico/FirstFragment.java
  com.example.penaltimecatronico.FirstFragment
  com.example.penaltimecatronico.FirstFragment$1
