@@ -64,6 +64,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="botMenuEstadist"
         android:text="Menu"
         tools:layout_editor_absoluteX="288dp"
         tools:layout_editor_absoluteY="54dp" />

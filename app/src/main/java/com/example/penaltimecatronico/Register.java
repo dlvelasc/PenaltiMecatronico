@@ -15,9 +15,10 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_sesion);
 
+
     }
 
-    public void BotRegistro(){
+    public void BotRegistro(View v){
         Button btn = (Button) findViewById(R.id.butSignUp);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,7 +29,7 @@ public class Register extends AppCompatActivity {
         });
     }
 
-    public void BotAtras(){
+    public void BotAtras(View v){
         Button btn = (Button) findViewById(R.id.buttonBack1);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
