@@ -29,7 +29,7 @@ public class gameOn extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),Menu.class );
+                Intent intent = new Intent(v.getContext(), Menu.class);
                 startActivity(intent);
             }
         });
