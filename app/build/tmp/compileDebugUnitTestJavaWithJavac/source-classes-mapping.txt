@@ -1,2 +1,0 @@
-com/example/penaltimecatronico/ExampleUnitTest.java
- com.example.penaltimecatronico.ExampleUnitTest
