@@ -1,17 +1,17 @@
 package com.example.penaltimecatronico;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
-
-import android.view.Menu;
-import android.view.MenuItem;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +32,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void botonRegistrar(View v){
-        
+        Button btn = (Button) findViewById(R.id.butIRegreso);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),Register.class );
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void botonInicio(View v){
+        Button btn = (Button) findViewById(R.id.butIInicio);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),LogInClient.class );
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
