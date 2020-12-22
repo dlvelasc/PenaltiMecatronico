@@ -10,12 +10,13 @@
         android:id="@+id/imageView4"
         android:layout_width="300dp"
         android:layout_height="353dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonPoints"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.007"
+        app:srcCompat="@drawable/estesi"
         tools:srcCompat="@drawable/estesi" />
 
     <Button
@@ -26,10 +27,10 @@
         android:text="TUS PUNTOS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.598" />
 
     <Button
         android:id="@+id/buttonPlay"
@@ -39,9 +40,9 @@
         android:text="Jugar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonPoints"
-        app:layout_constraintVertical_bias="0.194" />
+        app:layout_constraintVertical_bias="0.213" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
