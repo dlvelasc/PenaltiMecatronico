@@ -15,6 +15,7 @@ public class gameOn extends AppCompatActivity {
         setContentView(R.layout.game_on);
     }
 
+
     public void botPatear(View v){
         Button btn = (Button) findViewById(R.id.butSignUp);
         btn.setOnClickListener(new View.OnClickListener() {
