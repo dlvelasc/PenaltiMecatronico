@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public void botonRegistrar(View v){
+        
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
