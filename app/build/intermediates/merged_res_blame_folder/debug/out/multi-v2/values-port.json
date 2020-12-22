@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/nicolepilco/Desktop/PenaltiMecatronico/PenaltiMecatronico/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
+            "outputFile": "C:\\Users\\domen\\Documents\\PSTPenalMeca\\PenaltiMecatronico\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
             "map": [
                 {
-                    "source": "/Users/nicolepilco/.gradle/caches/transforms-2/files-2.1/780dca39713ff2fcf4eadcaf494ac982/appcompat-1.1.0/res/values-port/values-port.xml",
+                    "source": "C:\\Users\\domen\\.gradle\\caches\\transforms-2\\files-2.1\\780dca39713ff2fcf4eadcaf494ac982\\appcompat-1.1.0\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
