@@ -40,8 +40,9 @@ public class LogInClient extends AppCompatActivity {
 
     public void setSesion(String data1){
         String date = LocalDateTime.now().toString();
-        String sesionSistema = date.replaceAll("-","").replaceAll(":","").replaceAll(".","");
-        reference.child("Sistema").child("Sesion").setValue(date);
+        String sesionSistema = date.replace("-","").replace(":","").replace(".","");
+        Toast.makeText(LogInClient.this,sesionSistema, Toast.LENGTH_SHORT).show();
+        reference.child("Sistema").child("sesion").setValue(sesionSistema);
         DatabaseReference sesion = reference.child("users").child(data1).child("sesiones").child(sesionSistema);
         sesion.child("goles").setValue(0);
         sesion.child("intentos").setValue(0);
