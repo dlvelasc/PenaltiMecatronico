@@ -7,14 +7,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class gameOn extends AppCompatActivity {
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+public class gameOn extends AppCompatActivity {
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_on);
-    }
 
+    }
+    public void inicializarBaseDeDatos(){
+        rootNode = FirebaseDatabase.getInstance();// obtener valores de el nodo principal
+        reference = rootNode.getReference("users");
+    }
 
     public void botPatear(View v){
         Button btn = (Button) findViewById(R.id.butSignUp);
