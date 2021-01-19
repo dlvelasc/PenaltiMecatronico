@@ -2,7 +2,6 @@ package com.example.penaltimecatronico;
 
 public class UserHelperClass {
     private String username, email, password;
-    private int kick;
     public UserHelperClass() {
 
     }
@@ -10,7 +9,6 @@ public class UserHelperClass {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.kick=0;
     }
 
 
