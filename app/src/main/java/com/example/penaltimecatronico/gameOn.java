@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -15,14 +16,16 @@ import com.google.firebase.database.FirebaseDatabase;
 public class gameOn extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference reference;
-    String dificultad;
+    int dificultad;
     Button butonSet;
     EditText dificil;
+    Switch switchE;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_on);
         dificil = (EditText)findViewById(R.id.dificultad);
+        switchE = (Switch)findViewById(R.id.patea);
 
     }
     public void inicializarBaseDeDatos(){
@@ -37,20 +40,26 @@ public class gameOn extends AppCompatActivity {
     public void butSet(View v){
         butonSet = (Button)findViewById(R.id.butSet);
         inicializarBaseDeDatos();
-        dificultad = dificil.getText().toString();
+        dificultad = Integer.parseInt(dificil.getText().toString());
         reference.child("Sistema").child("nivel").setValue(dificultad);
         reference.child("users").child(LogInClient.activeUser).child("sesiones").child(LogInClient.sesionSistema).child("dificultad").setValue(dificultad);
-        if(!dificultad.isEmpty()){
+        if(dificultad !=0){
             butonSet.setEnabled(false);
         }
 
     }
-
+    public void onclick(View view){
+        if(view.getId()==R.id.patea){
+            if(switchE.isChecked()){
+                Toast.makeText(gameOn.this,"Ha sido activado",Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
     public void botMenu(View v){
         butonSet.setEnabled(true);
         dificil.setText("");
-        reference.child("Sistema").child("nivel").setValue("");
+        reference.child("Sistema").child("nivel").setValue(0);
         Intent intent = new Intent(v.getContext(), Menu.class);
         startActivity(intent);
     }

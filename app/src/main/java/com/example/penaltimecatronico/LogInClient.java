@@ -48,6 +48,7 @@ public class LogInClient extends AppCompatActivity {
         sesion.child("goles").setValue(0);
         sesion.child("intentos").setValue(0);
         sesion.child("fecha").setValue(date);
+        sesion.child("dificultad").setValue(0);
     }
 
     public void BotInicio(View v){

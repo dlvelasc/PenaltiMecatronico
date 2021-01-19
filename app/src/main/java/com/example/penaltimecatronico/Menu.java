@@ -18,6 +18,10 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
     }
+    public void inicializarBaseDeDatos(){
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference();
+    }
 
     public void botEstadistica(View v){
         Button btn = (Button) findViewById(R.id.buttonPoints);
@@ -33,9 +37,13 @@ public class Menu extends AppCompatActivity {
         Intent intent = new Intent(v.getContext(),gameOn.class);
         startActivity(intent);
     }
-    public void inicializarBaseDeDatos(){
-        rootNode = FirebaseDatabase.getInstance();// obtener valores de el nodo principal
-        reference = rootNode.getReference("users");
+    public void logOut(View view){
+        inicializarBaseDeDatos();
+        reference.child("Sistema").child("sesion").setValue("0");
+        reference.child("Sistema").child("user").setValue("");
+        finish();
+
     }
+
 
 }
