@@ -33,7 +33,12 @@ public class Estadistics extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.estadistics);
+        values = new ArrayList<>();
+        getData();
         populateTable();
+
+
+
     }
 
     public void getData() {
@@ -42,11 +47,10 @@ public class Estadistics extends AppCompatActivity {
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                values = new ArrayList<>();
-
                 for (DataSnapshot d : snapshot.getChildren()) {
+
                     Sesion s = d.getValue(Sesion.class);
-                    values.add(s);
+                    values.add(new Sesion(s.getFecha(),s.getGoles(),s.getIntentos()));
                 }
             }
 
@@ -57,7 +61,7 @@ public class Estadistics extends AppCompatActivity {
     }
 
     public void populateTable() {
-        getData();
+
         TableLayout scores = (TableLayout) findViewById(R.id.scores);
         scores.setStretchAllColumns(true);
         scores.bringToFront();
@@ -87,9 +91,9 @@ public class Estadistics extends AppCompatActivity {
                 TextView shots=new TextView(this);
                 shots.setText(s.getIntentos());
                 TextView points=new TextView(this);
-                points.setText(String.valueOf(Integer.parseInt(s.getGoles())*1.1));
+                points.setText(String.valueOf(s.getGoles()*1.1));
                 TextView accuracy=new TextView(this);
-                accuracy.setText(String.valueOf(Integer.parseInt(s.getGoles())/Integer.parseInt(s.getIntentos())));
+                accuracy.setText(String.valueOf(s.getGoles()/s.getIntentos()));
                 tr.addView(date);
                 tr.addView(goals);
                 tr.addView(shots);
