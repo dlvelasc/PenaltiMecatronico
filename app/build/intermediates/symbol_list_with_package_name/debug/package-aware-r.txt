@@ -1204,6 +1204,7 @@ id blocking
 id bottom
 id butIInicio
 id butIRegreso
+id butSet
 id butSignUp
 id button
 id button3
@@ -1243,6 +1244,7 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dialog_button
+id dificultad
 id dimensions
 id direct
 id disableHome
@@ -1357,7 +1359,6 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
-id spinner
 id split_action_bar
 id spread
 id spread_inside

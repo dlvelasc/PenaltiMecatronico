@@ -15,36 +15,40 @@ import com.google.firebase.database.FirebaseDatabase;
 public class gameOn extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference reference;
-    String dificultad;
+    public static String dificultad;
+    Button butonSet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_on);
         EditText dificil = (EditText)findViewById(R.id.dificultad);
-        
+        dificultad = dificil.getText().toString();
     }
     public void inicializarBaseDeDatos(){
         rootNode = FirebaseDatabase.getInstance();// obtener valores de el nodo principal
-        reference = rootNode.getReference("users");
-    }
-    public void setDificultad(){
-        inicializarBaseDeDatos();
-
+        reference = rootNode.getReference();
     }
 
     public void botPatear(View v){
         inicializarBaseDeDatos();
-        reference.child("Sistemas").child("kick").setValue(1);
+        reference.child("Sistema").child("kick").setValue(1);
+    }
+    public void butSet(View v){
+        butonSet = (Button)findViewById(R.id.butSet);
+        inicializarBaseDeDatos();
+        reference.child("Sistema").child("nivel").setValue(dificultad);
+        if(!dificultad.isEmpty()){
+            butonSet.setEnabled(false);
+        }
+
     }
 
     public void botMenu(View v){
-        Button btn = (Button) findViewById(R.id.button3);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Menu.class);
-                startActivity(intent);
-            }
-        });
+        butonSet.setEnabled(true);
+        Intent intent = new Intent(v.getContext(), Menu.class);
+        startActivity(intent);
+    }
+    public void vacio(){
+
     }
 }
