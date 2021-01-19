@@ -1207,7 +1207,6 @@ id butIRegreso
 id butSet
 id butSignUp
 id button
-id button2
 id button3
 id buttonBack1
 id buttonBack2
@@ -1293,6 +1292,7 @@ id line1
 id line3
 id listMode
 id list_item
+id logout
 id mailText
 id main
 id masked

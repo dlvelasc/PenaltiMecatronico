@@ -49,6 +49,7 @@
         android:id="@+id/logout"
         android:layout_width="119dp"
         android:layout_height="74dp"
+        android:onClick="logOut"
         android:text="Cerrar Sesion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

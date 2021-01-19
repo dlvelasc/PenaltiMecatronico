@@ -39,12 +39,19 @@ public class Menu extends AppCompatActivity {
     }
     public void logOut(View view){
         Button btn = (Button) findViewById(R.id.logout);
-        inicializarBaseDeDatos();
-        reference.child("Sistema").child("sesion").setValue("0");
-        reference.child("Sistema").child("user").setValue("");
-        finish();
-
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inicializarBaseDeDatos();
+                reference.child("Sistema").child("sesion").setValue("0");
+                reference.child("Sistema").child("user").setValue("");
+                Intent intent = new Intent(v.getContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 
 
 }
