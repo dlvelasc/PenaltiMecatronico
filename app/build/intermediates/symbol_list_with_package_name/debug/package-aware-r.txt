@@ -1331,6 +1331,7 @@ id right_side
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
+id scores
 id screen
 id scroll
 id scrollIndicatorDown
@@ -1391,11 +1392,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
-id textView2
-id textView3
-id textView5
-id textView6
-id textView7
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
