@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import java.time.LocalDateTime;
 
 public class LogInClient extends AppCompatActivity {
     public EditText userET,passwordET;
@@ -37,6 +38,16 @@ public class LogInClient extends AppCompatActivity {
         reference = rootNode.getReference();
     }
 
+    public void setSesion(String data1){
+        String date = LocalDateTime.now().toString();
+        String sesionSistema = date.replaceAll("-","").replaceAll(":","").replaceAll(".","");
+        reference.child("Sistema").child("Sesion").setValue(date);
+        DatabaseReference sesion = reference.child("users").child(data1).child("sesiones").child(sesionSistema);
+        sesion.child("goles").setValue(0);
+        sesion.child("intentos").setValue(0);
+        sesion.child("fecha").setValue(date);
+    }
+
     public void BotInicio(View v){
         inicializarBaseDeDatos();
         username = userET.getText().toString().trim();
@@ -57,6 +68,7 @@ public class LogInClient extends AppCompatActivity {
                         reference.child("Sistema").child("user").setValue(activeUser);
                         vacio();
                         Intent intent = new Intent(getApplicationContext(),Menu.class );
+                        setSesion(data1);
                         startActivity(intent);
                     }else {
                         Toast.makeText(LogInClient.this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();

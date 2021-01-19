@@ -12,8 +12,10 @@ com/example/penaltimecatronico/intro.java
 com/example/penaltimecatronico/FirstFragment.java
  com.example.penaltimecatronico.FirstFragment
  com.example.penaltimecatronico.FirstFragment$1
-com/example/penaltimecatronico/Sesion.java
- com.example.penaltimecatronico.Sesion
+com/example/penaltimecatronico/Menu.java
+ com.example.penaltimecatronico.Menu
+ com.example.penaltimecatronico.Menu$1
+ com.example.penaltimecatronico.Menu$2
 com/example/penaltimecatronico/Sistema.java
  com.example.penaltimecatronico.Sistema
 com/example/penaltimecatronico/gameOn.java
@@ -22,15 +24,10 @@ com/example/penaltimecatronico/gameOn.java
  com.example.penaltimecatronico.gameOn$2
 com/example/penaltimecatronico/UserHelperClass.java
  com.example.penaltimecatronico.UserHelperClass
-com/example/penaltimecatronico/Menu.java
- com.example.penaltimecatronico.Menu
- com.example.penaltimecatronico.Menu$1
- com.example.penaltimecatronico.Menu$2
 com/example/penaltimecatronico/Register.java
  com.example.penaltimecatronico.Register
  com.example.penaltimecatronico.Register$1
  com.example.penaltimecatronico.Register$2
- com.example.penaltimecatronico.Register$3
 com/example/penaltimecatronico/MainActivity.java
  com.example.penaltimecatronico.MainActivity
  com.example.penaltimecatronico.MainActivity$1
@@ -39,4 +36,3 @@ com/example/penaltimecatronico/MainActivity.java
 com/example/penaltimecatronico/LogInClient.java
  com.example.penaltimecatronico.LogInClient
  com.example.penaltimecatronico.LogInClient$1
- com.example.penaltimecatronico.LogInClient$2

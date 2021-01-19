@@ -31,14 +31,13 @@ public class Register extends AppCompatActivity {
         btn = (Button) findViewById(R.id.butSignUp);
         userET = (EditText)findViewById(R.id.userNText);
         emailET = (EditText)findViewById(R.id.mailText);
-        passwordET = (EditText)findViewById(R.id.passwText) ;
+        passwordET = (EditText)findViewById(R.id.passwText);
 
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sendData();
-
             }
         });
     }
@@ -59,6 +58,7 @@ public class Register extends AppCompatActivity {
                     reference.child(username).setValue(helperClass);
                     Toast.makeText(Register.this, "Se ha registrado exitosamente", Toast.LENGTH_SHORT).show();
                     vacio();
+
                 } else {
                     Toast.makeText(Register.this, "Ya se encuentra registrado", Toast.LENGTH_SHORT).show();
 
@@ -76,13 +76,7 @@ public class Register extends AppCompatActivity {
     }
 
     public void BotAtras(View v){
-        Button btn = (Button) findViewById(R.id.buttonBack1);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        finish();
     }
     public void vacio(){
         userET.setText("");
