@@ -38,6 +38,7 @@ public class Menu extends AppCompatActivity {
         startActivity(intent);
     }
     public void logOut(View view){
+        Button btn = (Button) findViewById(R.id.logout);
         inicializarBaseDeDatos();
         reference.child("Sistema").child("sesion").setValue("0");
         reference.child("Sistema").child("user").setValue("");

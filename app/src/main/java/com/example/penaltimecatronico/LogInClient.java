@@ -46,7 +46,7 @@ public class LogInClient extends AppCompatActivity {
         reference.child("Sistema").child("sesion").setValue(sesionSistema);
         DatabaseReference sesion = reference.child("users").child(data1).child("sesiones").child(sesionSistema);
         sesion.child("goles").setValue(0);
-        sesion.child("intentos").setValue(0);
+        sesion.child("intentos").setValue(1);
         sesion.child("fecha").setValue(date);
         sesion.child("dificultad").setValue(0);
     }
