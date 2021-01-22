@@ -16,6 +16,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     @Override
+    //crea las views y botones necesarios en el activity principal
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -31,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void botonRegistrar(View v){
+    public void botonRegistrar(View v){//metodo del boton registrar
         Button btn = (Button) findViewById(R.id.butIRegreso);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),Register.class );
+                Intent intent = new Intent(v.getContext(),Register.class );//activa el nuevo activity para el registro del usuario
                 startActivity(intent);
             }
         });
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),LogInClient.class );
+                Intent intent = new Intent(v.getContext(),LogInClient.class );//activa la ventana para el inicio de sesion
                 startActivity(intent);
             }
         });
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
+//sobreescritura del metodo para la creacion de un menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
