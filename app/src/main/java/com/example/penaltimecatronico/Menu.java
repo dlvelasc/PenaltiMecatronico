@@ -18,12 +18,12 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
     }
-    public void inicializarBaseDeDatos(){
+    public void inicializarBaseDeDatos(){  //Método que inicializa la base de datos y se la declara como referencia
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference();
     }
 
-    public void botEstadistica(View v){
+    public void botEstadistica(View v){ //inicia otra actividad donde se encuentran las sesiones que tiene el jugador y sus resultados en cada una
         Button btn = (Button) findViewById(R.id.buttonPoints);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,11 +33,11 @@ public class Menu extends AppCompatActivity {
             }
         });
     }
-    public void botJugar(View v){
+    public void botJugar(View v){ //inicia otra actividad  con un menu para el momento de jugar
         Intent intent = new Intent(v.getContext(),gameOn.class);
         startActivity(intent);
     }
-    public void logOut(View view){
+    public void logOut(View view){ //cierra la sesion y reinicia las variables de sistema al valor inicial para dar paso a que otro usuario se loguee
         Button btn = (Button) findViewById(R.id.logout);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

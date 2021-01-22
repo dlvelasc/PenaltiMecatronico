@@ -6,7 +6,9 @@ import android.os.Bundle;
 import java.util.Timer;
 import java.util.TimerTask;
 import android.content.Intent;
-
+/*
+Clase que setea el splash con el logo de la aplicacion al iniciarla
+ */
 public class intro extends AppCompatActivity {
     Timer timer;
     @Override

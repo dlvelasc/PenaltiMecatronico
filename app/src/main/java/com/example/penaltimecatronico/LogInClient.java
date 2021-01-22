@@ -35,46 +35,47 @@ public class LogInClient extends AppCompatActivity { /*Clase que verifica el acc
         passwordET = (EditText)findViewById(R.id.clientPassText);
 
     }
-    public void inicializarBaseDeDatos(){ /*Método que inicializa la base de datos y se la declara como referencia*/
+    public void inicializarBaseDeDatos(){ //Método que inicializa la base de datos y se la declara como referencia
         rootNode = FirebaseDatabase.getInstance();// obtener valores de el nodo principal
-        reference = rootNode.getReference();
+        reference = rootNode.getReference(); // delaracion de referencia
     }
 
     public void setSesion(String data1){
-        String date = LocalDateTime.now().toString();
+        String date = LocalDateTime.now().toString(); //extraer la fecha y hora para usarla como id de la sesion iniciada
         sesionSistema = date.replace("-","").replace(":","").replace(".","");
-        reference.child("Sistema").child("sesion").setValue(sesionSistema);
-        DatabaseReference sesion = reference.child("users").child(data1).child("sesiones").child(sesionSistema);
-        sesion.child("goles").setValue(0);
+        reference.child("Sistema").child("sesion").setValue(sesionSistema); // setea como variable de Sistema la sesion actual del usuario jugando
+        DatabaseReference sesion = reference.child("users").child(data1).child("sesiones").child(sesionSistema); // crea la sesion dentro del nodo de sesiones del usuario logueado
+        sesion.child("goles").setValue(0); //
         sesion.child("intentos").setValue(1);
         sesion.child("fecha").setValue(date);
         sesion.child("dificultad").setValue(0);
     }
 
-    public void BotInicio(View v){
+    public void BotInicio(View v){ //Boton inicio lleva al siguiente intent de menu una vez verificado el usuario
         inicializarBaseDeDatos();
         username = userET.getText().toString().trim();
         pass = passwordET.getText().toString().trim();
-        validarLogIn();
+        validarLogIn(); // función que valida que el usuario exista
 
     }
-    public void validarLogIn(){
+    public void validarLogIn(){ //Metodo encargado de verificar que los datos ingresados sean de un usuario ya registrato
         reference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) { //recorrer los valores de este nodo
                 if(snapshot.hasChild(username)){
-                    UserHelperClass user = snapshot.child(username).getValue(UserHelperClass.class);
+                    UserHelperClass user = snapshot.child(username).getValue(UserHelperClass.class); //obtener valores del usuario coincidente encontrado
                     String data1 = user.getUsername();
                     String data2 = user.getPassword();
                     if(pass.equals(data2)){
-                        activeUser = data1;
+                        activeUser = data1; //set el username del usuario que está activo
+                        //setear el nombre de usuario activo en la base de datos como una variable del nodo Sistema y el ESP-32 sepa a que path ir
                         reference.child("Sistema").child("user").setValue(activeUser);
                         vacio();
-                        Intent intent = new Intent(getApplicationContext(),Menu.class );
+                        Intent intent = new Intent(getApplicationContext(),Menu.class);
                         setSesion(data1);
-                        startActivity(intent);
+                        startActivity(intent); //inicio de otra actividad si la contraseña también está correcta
                     }else {
-                        Toast.makeText(LogInClient.this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LogInClient.this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show(); //Mensaje instantáneo que alerta al usuario de equivocarse
                     }
                 }else{
                     Toast.makeText(LogInClient.this, "Usuario incorrecto", Toast.LENGTH_SHORT).show();
@@ -86,11 +87,11 @@ public class LogInClient extends AppCompatActivity { /*Clase que verifica el acc
             }
         });
     }
-    public void BotAtras2(View v){
+    public void BotAtras2(View v){ //Boton que lleva al menu principal
         finish();
 
     }
-    public void vacio(){
+    public void vacio(){ // funcion que permite limpiar los campos de los EditText
         userET.setText("");
         passwordET.setText("");
     }

@@ -1,5 +1,6 @@
 package com.example.penaltimecatronico;
-
+/*Clase que abarca las variables del usuario logueado que necesita el ESP-32 modificar en
+la base de datos según la información recogida*/
 public class Sesion {
     private String fecha;
     private int goles;
