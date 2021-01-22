@@ -17,7 +17,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.time.LocalDateTime;
 
-public class LogInClient extends AppCompatActivity {
+
+public class LogInClient extends AppCompatActivity { /*Clase que verifica el acceso de un usuario ya previamente registrado*/
     public EditText userET,passwordET;
     public static String activeUser;
     public static String sesionSistema;
@@ -34,7 +35,7 @@ public class LogInClient extends AppCompatActivity {
         passwordET = (EditText)findViewById(R.id.clientPassText);
 
     }
-    public void inicializarBaseDeDatos(){
+    public void inicializarBaseDeDatos(){ /*Método que inicializa la base de datos y se la declara como referencia*/
         rootNode = FirebaseDatabase.getInstance();// obtener valores de el nodo principal
         reference = rootNode.getReference();
     }
